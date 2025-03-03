@@ -52,6 +52,68 @@ select {
 }
 /* CSS Reset */
 
+/* Body */
 body {
   background-color: #e2edf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Doto", serif;
+}
+
+/* Circles */
+.circle-box {
+  width: 160px;
+  height: 160px;
+}
+
+.outer-circle {
+  width: 160px;
+  height: 160px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15),
+    -5px -5px 5px rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.inner-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.15),
+    inset -4px -4px 4px rgba(255, 255, 255, 0.55), -0.5px -0.5px 0 #fff,
+    0.5px 0.5px 0 rgba(0, 0, 0, 0.15), 0 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* Number */
+.number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* SVG */
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: progress 2s linear forwards;
+}
+
+@keyframes progress {
+  to {
+    stroke-dashoffset: 66;
+  }
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
